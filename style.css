@@ -1,0 +1,138 @@
+*/{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-image: url("images/bg.jpg");
+}
+.container{
+    background-color: white;
+    padding: 20px;
+    width: 58vw;
+    min-height: 500px;
+    margin: 80px auto;
+    border-radius: 10px;
+}
+.input-box{
+    width: 100%;
+}
+.input{
+    font-size: 1.3rem;
+    padding: 10px;
+    width: 90%;
+    border-radius: 40px;
+    display: block;
+    margin: 0 auto;
+}
+.btn{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: 20px;
+    /*justify-content: center;*/
+}
+.add-btn{
+    justify-self: end;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border: 0 solid blue;
+    border-radius: 40px;
+    background-color: blue;
+    color: white;
+    /*display: block;*/
+    margin: 10px 0;
+}
+.clear-btn{
+    justify-self: start;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border: 0 solid red;
+    border-radius: 40px;
+    background-color: red;
+    color: white;
+    /*display: block;*/
+    margin: 10px 0;
+}
+.task-box{
+    margin-top: 50px;
+}
+.task-list{
+    list-style: none;
+    padding: 0;
+}
+.task-list-li{
+    display: flex;
+    margin: 0 0 10px 0;
+    border: 0px solid black;
+    justify-content: space-around;
+}
+.checkbox{
+    align-self: center;
+    height: 20px;
+    width: 20px;
+}
+.task-text{
+    font-size: 1.3rem;
+    padding: 10px;
+    width: 83%;
+    background-color: rgb(232, 244, 252);
+    color: black;
+    border-radius: 5px;
+    text-align: left;
+}
+.cross-btn{
+    align-self: center;
+    font-size: 1rem;
+    font-weight: bolder;
+    padding: 5px 7px;
+    border: 0px solid black;
+    border-radius: 100px;
+    background-color: black; 
+    color: white;
+    max-height: 26px;
+    margin: 3px;
+}
+.done {
+    color: black !important;
+    background-color: rgb(204, 217, 252) !important;
+}
+.clicked{
+    box-shadow: 0 3px 4px 0 gray;
+    opacity: 0.6;
+}
+@media only screen and (max-width: 650px){
+    .input,.add-btn,.clear-btn,.task-text{
+        font-size: 1.1rem;
+    }
+    .task-text{
+        padding: 8px;
+        width: 80%;
+    }
+    .container{
+        width: 80vw;
+    }
+    .cross-btn{
+        font-size: 0.8rem;
+        padding: 3px 6px;
+    }
+    .checkbox{
+        height: 17px;
+        width: 17px;
+    }
+}
+@media only screen and (max-width: 480px){
+    .container{
+        width: 97vw;
+        margin: 60px 0;
+        padding: 15px 0;
+        min-height: 400px;
+    }
+}
+@media only screen and (max-width: 400px){
+    .input{
+        padding: 8px;
+    }
+    .add-btn,.clear-btn{
+        padding: 7px 10px;
+    }
+}
