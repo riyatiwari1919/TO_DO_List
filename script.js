@@ -20,7 +20,8 @@ function addTask(){
             alert("Enter Task");
     }
     else{
-        console.log("Added task is : " + enteredTask);
+        document.querySelector(".update-btn").innerHTML = "Edit";
+        console.log("Task added: " + enteredTask);
 
         var newLi = document.createElement("li");
         newLi.classList.add("task-list-li");
@@ -50,7 +51,7 @@ function addTask(){
         for(var i=0; i<totalLibtns; i++){
             document.querySelectorAll(".cross-btn")[i].addEventListener("click", function(){
                 var removedTask = this.parentElement.firstChild.nextElementSibling.innerHTML;
-                console.log("Removed task is : " + removedTask);
+                console.log("Task removed : " + removedTask);
                 this.parentElement.remove();
             });
         }
@@ -70,13 +71,66 @@ document.querySelector(".input").addEventListener("keypress", function(event){
     }
 });
 
+var c = 0;
+document.querySelector(".update-btn").addEventListener("click", function(){
+    makeAnimation("update-btn"); 
+    
+    if (document.querySelectorAll("li").length == 0){
+        alert("Enter Task");
+    }
+    else{
+        if(this.innerHTML == "Edit"){
+            var totalTask = document.querySelectorAll(".task-text").length;
+            for (var i=0; i<totalTask; i++){
+                document.querySelectorAll(".task-text")[i].addEventListener("click", function(){
+            
+                    c = c+1;
+                    console.log("Task to be edited : ",this.innerHTML);
+                    //this.classList.add("bg-white","border-blue");
+                    this.classList.toggle("bg-white");
+                    this.classList.toggle("border-blue");
+                    
+                    if(c%2 != 0){
+                        document.querySelector(".input").value = this.innerHTML;
+                    }
+                    else{
+                        document.querySelector(".input").value = "";
+                    }
+                    document.querySelector(".input").addEventListener("keypress", function(){
+                        document.querySelector(".update-btn").innerHTML = "Save";
+                    });
+                    
+    
+                });
+            }
+        }
+        else if (this.innerHTML == "Save"){
+            if(document.querySelector(".input").value == ""){
+                alert("Choose Task");
+                document.querySelector(".update-btn").innerHTML = "Edit";
+            }
+            else{
+                var editedTask = document.querySelector(".input").value;
+                document.querySelector(".bg-white").innerHTML = editedTask;
+                console.log("Edited Task : ",editedTask);
+    
+                document.querySelector(".update-btn").innerHTML = "Edit";
+    
+                document.querySelector(".bg-white").classList.remove("bg-white","border-blue");    
+                document.querySelector(".input").value = "";  
+            }
+            
+        }      
+    }    
+});
+
 document.querySelector(".clear-btn").addEventListener("click", function(){
     if (document.querySelectorAll("li").length == 0){
         alert("Enter Task");
     }
     else{
+        document.querySelector(".update-btn").innerHTML = "Edit";
         makeAnimation("clear-btn");
-        console.log(document.querySelector(".task-list"));
         document.querySelector(".task-list").remove();
         console.log("All tasks Cleared!");
         createUl(); 
