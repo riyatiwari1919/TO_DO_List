@@ -26,32 +26,30 @@ body{
 }
 .btn{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     column-gap: 20px;
-    /*justify-content: center;*/
+}
+.add-btn, .update-btn, .edit-btn, .save-btn, .clear-btn{
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    border: 0 solid black;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+    margin: 10px 0;
 }
 .add-btn{
     justify-self: end;
-    font-size: 1.3rem;
-    padding: 10px 20px;
-    border: 0 solid blue;
-    border-radius: 40px;
     background-color: blue;
-    color: white;
-    /*display: block;*/
-    margin: 10px 0;
+}
+.update-btn,.edit-btn,.save-btn{
+    justify-self: center;
+    background-color: rgb(205, 50, 159);
 }
 .clear-btn{
     justify-self: start;
-    font-size: 1.3rem;
-    padding: 10px 20px;
-    border: 0 solid red;
-    border-radius: 40px;
     background-color: red;
-    color: white;
-    /*display: block;*/
-    margin: 10px 0;
 }
 .task-box{
     margin-top: 50px;
@@ -97,12 +95,19 @@ body{
     background-color: rgb(204, 217, 252) !important;
 }
 .clicked{
-    box-shadow: 0 3px 4px 0 gray;
+    box-shadow: 0 3px 4px 0 black;
     opacity: 0.6;
 }
+.border-blue{
+    border: 1px solid blue;
+}
+.bg-white{
+    background-color: white;
+}
 @media only screen and (max-width: 650px){
-    .input,.add-btn,.clear-btn,.task-text{
+    .input,.add-btn,.update-btn,.edit-btn,.save-btn,.clear-btn,.task-text{
         font-size: 1.1rem;
+        padding: 7px 10px;
     }
     .task-text{
         padding: 8px;
@@ -121,18 +126,13 @@ body{
     }
 }
 @media only screen and (max-width: 480px){
+    .add-btn,.update-btn,.edit-btn,.save-btn,.clear-btn{
+        font-size: 1rem;
+    }
     .container{
         width: 97vw;
         margin: 60px 0;
         padding: 15px 0;
         min-height: 400px;
-    }
-}
-@media only screen and (max-width: 400px){
-    .input{
-        padding: 8px;
-    }
-    .add-btn,.clear-btn{
-        padding: 7px 10px;
     }
 }
