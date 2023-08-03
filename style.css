@@ -26,11 +26,12 @@ body{
 }
 .btn{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    /*grid-template-columns: 1fr 1fr 1fr; when update btn is included*/
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     column-gap: 20px;
 }
-.add-btn, .update-btn, .edit-btn, .save-btn, .clear-btn{
+.add-btn, .update-btn, .clear-btn{
     font-size: 1.3rem;
     padding: 10px 20px;
     border: 0 solid black;
@@ -43,7 +44,7 @@ body{
     justify-self: end;
     background-color: blue;
 }
-.update-btn,.edit-btn,.save-btn{
+.update-btn{
     justify-self: center;
     background-color: rgb(205, 50, 159);
 }
@@ -105,7 +106,7 @@ body{
     background-color: white;
 }
 @media only screen and (max-width: 650px){
-    .input,.add-btn,.update-btn,.edit-btn,.save-btn,.clear-btn,.task-text{
+    .input,.add-btn,.update-btn,.clear-btn,.task-text{
         font-size: 1.1rem;
         padding: 7px 10px;
     }
@@ -126,7 +127,7 @@ body{
     }
 }
 @media only screen and (max-width: 480px){
-    .add-btn,.update-btn,.edit-btn,.save-btn,.clear-btn{
+    .add-btn,.update-btn,.clear-btn{
         font-size: 1rem;
     }
     .container{
